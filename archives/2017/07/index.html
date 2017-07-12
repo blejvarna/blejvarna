@@ -95,18 +95,22 @@
 
 
 <script type="text/javascript">
-$(document).ready(function(){      
-var ht= $("#kviff img").height(),      
-wd=$("#kviff img").width(),      
+$(document).ready(function(){
+var wd;
+var ht;
 mult=1.02; //change to the no. of times you want to increase your image 
       //size.
-$("#kviff img").on('mouseenter', function(){
+$("#kviff img").on('mouseenter', function(){ 
+ht = $("#kviff img").height(),
+wd = $("#kviff img").width(),
 $(this).animate({height: ht*mult,
                  width: wd*mult}, 500);
 });
 $("#kviff img").on('mouseleave', function(){
-$(this).animate({height: ht,
-                 width: wd}, 500);
+ht = $("#kviff img").height(),      
+wd = $("#kviff img").width(),    
+$(this).animate({height: ht/mult,
+                 width: wd/mult}, 500);
 })
 });
 </script>
